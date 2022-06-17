@@ -1,0 +1,84 @@
+
+
+/*-- Gainers rows header --*/
+.gainers-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 17px 0 11px;
+}
+
+.gainers-top p {
+  font-size: .8rem;
+  width: 80px;
+}
+
+.gainers-top-middle {
+  padding-left: 18px;
+}
+
+.gainers-top-right {
+  padding-right: 10px;
+}
+
+/*-- Gainers rows --*/
+
+.gainers .coin-row {
+  margin-left: 0;
+}
+
+.gainers .coin {
+  display: flex;
+  align-items: center;
+}
+
+.gainers .coin-right {
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gainers .coin-name {
+  width: 120px;
+}
+
+.gainers .coin-ticker,
+.gainers .coin-cap,
+.gainers .coin-percent-green,
+.gainers .coin-percent-red {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.gainers .crypto-row-left {
+align-self: center;
+width: 100px;
+}
+
+.gainers .coin-name,
+.gainers .coin-volume,
+.gainers .coin-price-red,
+.gainers .coin-price-green {
+  font-size: .8rem;
+}
+
+.gainers .crypto-row-middle {
+  text-align: right;
+  width: 80px;
+  padding-right: 15px;
+}
+
+.gainers .crypto-row-right {
+  text-align: right;
+  width: 100px;
+}
+
+.gainers .coin-percent-red,
+.gainers .coin-price-red {
+  color: #e00303;
+}
+
+.gainers .coin-percent-green,
+.gainers .coin-price-green {
+  color: #059a05;
+}
+

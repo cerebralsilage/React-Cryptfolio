@@ -1,0 +1,82 @@
+/*-- Losers rows header --*/
+.losers-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 17px 0 11px;
+}
+
+.losers-top p {
+  font-size: .8rem;
+  width: 80px;
+}
+
+.losers-top-middle {
+  padding-left: 18px;
+}
+
+.losers-top-right {
+  padding-right: 10px;
+}
+
+/*-- Gainers rows --*/
+
+.losers .coin-row {
+  margin-left: 0;
+}
+
+.losers .coin {
+  display: flex;
+  align-items: center;
+}
+
+.losers .coin-right {
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.losers .coin-name {
+  width: 120px;
+}
+
+.losers .coin-ticker,
+.losers .coin-cap,
+.losers .coin-percent-green,
+.losers .coin-percent-red {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.losers .crypto-row-left {
+align-self: center;
+width: 100px;
+}
+
+.losers .coin-name,
+.losers .coin-volume,
+.losers .coin-price-red,
+.losers .coin-price-green {
+  font-size: .8rem;
+}
+
+.losers .crypto-row-middle {
+  text-align: right;
+  width: 80px;
+  padding-right: 15px;
+}
+
+.losers .crypto-row-right {
+  text-align: right;
+  width: 100px;
+}
+
+.losers .coin-percent-red,
+.losers .coin-price-red {
+  color: #e00303;
+}
+
+.losers .coin-percent-green,
+.losers .coin-price-green {
+  color: #059a05;
+}
+

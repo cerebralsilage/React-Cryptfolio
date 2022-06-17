@@ -1,0 +1,130 @@
+
+/*-- coincap banner --*/
+
+.cap-total-orange {
+  height: 80px;
+  width: 98%;
+  margin: 20px auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    -225deg,
+    #e47514 0%,
+    #eb6004 48%,
+    #e75106 100%
+  ) !important;
+}
+
+.cap-total-green {
+  height: 80px;
+  width: 98%;
+  margin: 20px auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #086918 !important;
+}
+
+.cap-total-top  {
+  display: flex;
+  background-color: #d8c11100 !important;
+  justify-content: space-between;
+  font-size: .8rem;
+  margin-bottom: 2px;
+}
+
+.cap-total-top p,
+.cap-total-bottom p {
+  background-color: #11d81100 !important;
+  color: white;
+}
+
+.total-cap-num {
+  font-weight: bold;
+}
+
+.cap-total-bottom {
+  display: flex;
+  background-color: #11d81100 !important;
+  justify-content: space-between;
+}
+
+/*-- Coin rows header --*/
+.cap-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: .8rem;
+  width: 100%;
+  padding: 10px 10px 0;
+}
+
+/*-- Coin rows --*/
+
+
+.coincapage-coin-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid #d7d7d7;
+  margin: 0 10px;
+}
+
+.coincapage-coin {
+  display: flex;
+  align-items: center;
+}
+
+.coincapage-coin-right {
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.coincapage .coin-name {
+  width: 120px;
+}
+
+.coincapage-coin-ticker {
+  font-weight: bold;
+}
+
+.coincapage-crypto-row-left {
+align-self: center;
+width: 100px;
+}
+
+.coincapage-coin-name,
+.coincapage-coin-occu,
+.coincapage-coin-percent-red,
+.coincapage-coin-percent-green {
+  font-size: .8rem;
+}
+
+.coincapage-crypto-row-middle {
+  text-align: right;
+  width: 80px;
+  padding-right: 15px;
+}
+
+.coincapage-crypto-row-right {
+  text-align: right;
+  width: 100px;
+}
+
+.coincapage-coin-percent-red,
+.coincapage-coin-price-red {
+  color: #e00303;
+}
+
+.coincapage-coin-percent-green,
+.coincapage-coin-price-green {
+  color: #059a05;
+}
+

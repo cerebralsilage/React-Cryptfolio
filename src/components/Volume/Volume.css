@@ -1,0 +1,81 @@
+/*-- volume rows header --*/
+.volume-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 17px 0 11px;
+}
+
+.volume-top p {
+  font-size: .8rem;
+  width: 80px;
+}
+
+.volume-top-middle {
+  padding-left: 45px;
+}
+
+.volume-top-right {
+  padding-right: 10px;
+}
+
+/*-- volume rows --*/
+
+.volume .coin-row {
+  margin-left: 0;
+}
+
+.volume .coin {
+  display: flex;
+  align-items: center;
+}
+
+.volume .coin-right {
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.volume .coin-name {
+  width: 120px;
+}
+
+.volume .coin-ticker,
+.volume .coin-cap,
+.volume .coin-volume-red,
+.volume .coin-volume-green {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.volume .crypto-row-left {
+align-self: center;
+width: 100px;
+}
+
+.volume .coin-name,
+.volume .coin-price-red,
+.volume .coin-price-green {
+  font-size: .8rem;
+}
+
+.volume .crypto-row-middle {
+  text-align: right;
+  width: 80px;
+  padding-right: 15px;
+  align-self: center;
+}
+
+.volume .crypto-row-right {
+  text-align: right;
+  width: 100px;
+}
+
+.volume .coin-price-red,
+.volume .coin-volume-red {
+  color: #e00303;
+}
+
+.volume .coin-price-green,
+.volume .coin-volume-green {
+  color: #059a05;
+}
