@@ -6,6 +6,8 @@ import Nav from 'react-bootstrap/Nav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
+
+import { faMoon } from '@fortawesome/free-regular-svg-icons';
 import Logo from './assets/pics/cryptoicon.png';
 import './App.css';
 
@@ -14,14 +16,20 @@ import GainersPage from './components/Gainers/GainersPage';
 import LosersPage from './components/Losers/LosersPage';
 import MyPicksPage from './components/MyPicks/MyPicksPage';
 import VolumePage from './components/Volume/VolumePage';
+import Alerts from './components/Alerts/Alerts';
 import Search from './components/Search/Search';
 
 
 const magnifyingGlass = <FontAwesomeIcon icon={ faMagnifyingGlass } />
 const bell = <FontAwesomeIcon icon={ faBell } /> 
+const moon = <FontAwesomeIcon icon={ faMoon } />
 
 
 const App = props => {
+
+  function toggleMode() {
+    //Watch Videos
+  } 
 
   return (
     <div className="App">
@@ -32,6 +40,9 @@ const App = props => {
             <Navbar.Brand className="navbar-brand"> 
               <img className="logo" src={ Logo } alt='logo' />
               <h1 className='header-name'>Cryptfolio</h1> 
+              <div className="moon" onClick={toggleMode()}> 
+                { moon }
+              </div>
               <Link className="nav-link" id='bell' to='/Alerts'>
                 { bell }
               </Link>
@@ -80,9 +91,11 @@ const App = props => {
             <Route path='/Gainers' key='gainers' element={ <GainersPage /> } />
             <Route path='/Losers' key='losers' element={ <LosersPage /> } />
             <Route path='/Volume' key='volume' element={ <VolumePage /> } />
+            <Route path='/Alerts' key='alerts' element={ <Alerts /> } />
             <Route path='/Search' key='search' element={ <Search /> } />
           </Routes>
-        </Container> 
+
+        </Container>
       </Router>
     </div>
   );

@@ -31,24 +31,20 @@ const Gainers = ({
               {priceChange < 0 ? (
                 <div>
                   {typeof priceChange === 'number' && 
-                    <div>
                       <p className='coin-percent-red'>{
                         priceChange.toFixed(2)}%
                       </p>
-                      <p className="coin-price-red">{price.toFixed(4)}</p>
-                    </div>
                   }
+                  <p className="coin-price-red">{price}</p> 
                 </div>
               ) : (
                 <div>
                   {typeof priceChange === 'number' &&
-                    <div>
-                      <p className='coin-percent-green'>
-                        +{priceChange.toFixed(2)}%
-                      </p>
-                      <p className="coin-price-green">{price.toFixed(4)}</p>
-                    </div>
+                    <p className='coin-percent-green'>
+                      +{priceChange.toFixed(2)}%
+                    </p>
                   }
+                  <p className="coin-price-green">{price}</p>
                 </div>
               )}
             </div>
