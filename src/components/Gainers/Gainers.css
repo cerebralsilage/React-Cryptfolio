@@ -4,12 +4,12 @@
 .gainers-top {
   display: flex;
   justify-content: space-between;
-  margin: 30px 17px 0 11px;
+  margin: 30px 10px 0 10px;
+  width: 98%;
 }
 
 .gainers-top p {
   font-size: .8rem;
-  width: 80px;
 }
 
 .gainers-top-middle {
@@ -35,10 +35,7 @@
   width: 97%;
   display: flex;
   justify-content: space-between;
-}
-
-.gainers .coin-name {
-  width: 120px;
+  align-items: center;
 }
 
 .gainers .coin-ticker,
@@ -51,7 +48,7 @@
 
 .gainers .crypto-row-left {
 align-self: center;
-width: 100px;
+width: 30%;
 }
 
 .gainers .coin-name,
@@ -63,13 +60,12 @@ width: 100px;
 
 .gainers .crypto-row-middle {
   text-align: right;
-  width: 80px;
   padding-right: 15px;
 }
 
 .gainers .crypto-row-right {
   text-align: right;
-  width: 100px;
+  width: 30%;
 }
 
 .gainers .coin-percent-red,
@@ -81,4 +77,3 @@ width: 100px;
 .gainers .coin-price-green {
   color: #059a05;
 }
-

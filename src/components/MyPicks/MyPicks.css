@@ -1,0 +1,173 @@
+
+.picks-title{
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 40px;
+}
+
+#dark .picks-title {
+  color: #d7d7d7;
+}
+
+.no-data-menu {
+  margin: 70px auto;
+  width: 96%;
+  max-width: 450px;
+  height: 200px;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#light .no-data-menu {
+  background-color: rgb(193, 190, 190);
+  border: 1px solid gray;
+}
+
+#dark .no-data-menu {
+  background-color: rgb(39, 38, 38);
+  border: 1px solid gray;
+}
+
+.search-button {
+  width: 80px;
+  height: 35px;
+  margin-top: 20px;
+  box-shadow: 2px 2px gray;
+  border-radius: 10px;
+  border: 1px solid gray;
+  cursor: pointer;
+  background-color: rgb(209, 209, 209);
+}
+
+#dark .search-button {
+  background-color: rgb(99, 97, 97);
+  box-shadow: 2px 2px rgb(12, 12, 12);
+  color: #d7d7d7;
+}
+
+#dark .search-button:active {
+  background-color: rgb(45, 44, 44);
+  box-shadow: none;
+}
+
+.search-button:active {
+  box-shadow: none;
+  background-color: rgb(173, 171, 171);
+  border: 1px solid rgb(82, 81, 81);
+}
+
+/* -- Mypicks head titles -- */
+.phead {
+  display: flex;
+  justify-content: space-between;
+  margin: 60px 10px 10px;
+  font-size: .8rem;
+}
+
+.phead-mid {
+  margin-left: 80px;
+}
+
+.phead-right {
+  margin-left: 10px;
+}
+
+/*-- MyPicks rows --*/
+
+.mypicks a {
+  display: flex;
+  width: 100%;
+  align-self: center;
+}
+
+.mypicks {
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+  width: 100%;
+}
+
+.mypicks .coin {
+  align-items: center;
+  
+}
+
+.mypicks .coin-mid {
+  width: 58%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mypicks .coin-name {
+  width: 120px;
+}
+
+.mypicks .coin-ticker,
+.mypicks .coin-percent-green,
+.mypicks .coin-percent-red {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.mypicks .crypto-row-left {
+align-self: center;
+width: 100px;
+}
+
+.mypicks .coin-name {
+  font-size: .8rem;
+}
+
+.mypicks .crypto-row-middle {
+  text-align: right;
+  width: 80px;
+  padding-right: 15px;
+  align-self: center;
+}
+
+.mypicks .crypto-row-right {
+  text-align: right;
+  width: 88px;
+  align-self: center;
+}
+
+.mypicks .coin-percent-red-div {
+  background-color: #e00303;
+  color: #f7f6f6;
+  height: 30px;
+  width: 80px;
+  padding: 6px;
+  text-align: center;
+  border-radius: 10px;
+  margin-right: 0;
+}
+
+.mypicks .coin-percent-green-div {
+  background-color: #059a05;
+  color: #f7f6f6;
+  height: 30px;
+  width: 80px;
+  padding: 6px;
+  text-align: center;
+  border-radius: 10px;
+  margin-right: 0;
+}
+
+/*-- star -- */
+.mypicks svg {
+  align-self: center;
+  margin: 10px 10px 10px 0;
+  color: #706d6d;
+  cursor: pointer;
+}
+
+#dark .mypicks svg {
+  color: #a4a3a3;
+}
+
+
+

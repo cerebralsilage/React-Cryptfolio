@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from "axios";
+import { numberWithCommas, numFormatter } from '../../Helpers/NumberFunctions';
 import './Gainers.css';
 
 import Gainers from './Gainers';
@@ -7,35 +8,20 @@ import Gainers from './Gainers';
 function GainersPage() {
 
   const [listOfCoins, setListOfCoins] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     Axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false"
     )
+    .then(setIsLoading(true)
+    )
     .then(response => {
         setListOfCoins(response.data);
+        setIsLoading(false);
       //  console.log(response.data);
       })
       .catch(error => console.log(error));
   }, []); 
-
-  function numberWithCommas(num) {
-    if (num >= 1000) {
-      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    } else {
-      return num;
-    }
-  } 
-
-  function numFormatter(num) {
-    if(num > 999 && num < 1000000){
-        return (num/1000).toFixed(2) + 'K'; 
-    } else if(num > 999999 && num < 1000000000){
-        return (num/1000000).toFixed(2) + 'M'; 
-    } else if(num > 1000000000){
-        return (num/1000000000).toFixed(2) + 'B' 
-    }
-  }
 
   const newList = listOfCoins.sort( function(a, b) {
     const aValue = Number(a['price_change_percentage_24h']);
@@ -47,27 +33,34 @@ const reversedNewList = newList.reverse();
 
   return (
     <div>
-      <div className="gainers-top">
-          <p>Coin</p>
-          <p className="gainers-top-middle">Cap/Volume</p>
-          <p className="gainers-top-right">Change/Price</p>
+      {isLoading === true ?
+      <p className="loading-data">Loading...</p>
+      :
+      <div>
+        <div className="gainers-top">
+            <p>Coin</p>
+            <p className="gainers-top-middle">Cap/Volume</p>
+            <p className="gainers-top-right">Change/Price</p>
+          </div>
+        <div className="gainers-rows">
+          {reversedNewList.map((coin) => {
+            return(
+              <Gainers
+                key={coin.id}
+                id={coin.id}
+                icon={coin.image}
+                symbol={coin.symbol}
+                name={coin.name}
+                coincap={numFormatter(coin.market_cap)}
+                volume={numFormatter(coin.total_volume)}
+                price={numberWithCommas(coin.current_price)}
+                priceChange={coin.price_change_percentage_24h}
+              /> 
+            );
+          })} 
         </div>
-      <div className="gainers-rows">
-        {reversedNewList.map((coin) => {
-          return(
-            <Gainers
-              key={coin.id}
-              icon={coin.image}
-              symbol={coin.symbol}
-              name={coin.name}
-              coincap={numFormatter(coin.market_cap)}
-              volume={numFormatter(coin.total_volume)}
-              price={numberWithCommas(coin.current_price)}
-              priceChange={coin.price_change_percentage_24h}
-            /> 
-          );
-        })} 
       </div>
+      }
     </div>
   );
 }

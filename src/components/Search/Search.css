@@ -1,0 +1,117 @@
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  width: 69%;
+  max-width: 400px;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0 5px;
+}
+
+.searchbar form {
+  width: 100%;
+}
+
+.text-block {
+  width: 87%;
+  border: none;
+  margin: 0 10px;
+}
+
+.text-block:focus {
+  outline: none !important;
+}
+
+#light .searchbar {
+  background-color: rgb(240, 238, 238);
+  margin: 20px auto;
+}
+
+#dark .searchbar {
+  background-color: rgb(53, 52, 52);
+  margin: 20px auto;
+}
+
+#light .text-block {
+  background-color: rgb(240, 238, 238);
+}
+
+#dark .text-block {
+  background-color: rgb(53, 52, 52);
+}
+
+.search-reset {
+  border: none;
+  cursor: pointer;
+}
+
+.reset-input {
+  border: none;
+  width: 0;
+  height: 0;
+}
+
+/*-- resetbutton on searchbar --*/
+#light .magGlass,
+#light .search-reset svg {
+  color: rgb(169, 170, 171);
+}
+
+#dark .magGlass,
+#dark .search-reset svg {
+  color: rgb(130, 128, 128);
+}
+
+#dark .search-reset {
+  background-color: rgb(53, 52, 52);
+}
+
+/*-- Search rows --*/
+
+.search-row {
+  margin: 10px;
+  display: flex;
+}
+
+.search .coin {
+  display: flex;
+  align-items: center;
+}
+
+.search .coin-right {
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search .coin-ticker {
+  font-weight: bold;
+  font-size: .9rem;
+}
+
+.search .coin-name {
+  font-size: .9rem;
+}
+
+.search .crypto-row-left {
+  display: flex;
+  align-self: center;
+  width: 200px;
+}
+
+.search .crypto-row-right {
+  text-align: right;
+  width: 100px;
+  align-self: center;
+}
+
+#emptyStar {
+  color: rgb(188, 186, 186);
+}
+
+#goldStar {
+  color: goldenrod;
+}
+

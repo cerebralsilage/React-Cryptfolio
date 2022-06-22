@@ -7,13 +7,17 @@ import Volume from './Volume';
 function VolumePage() {
 
   const [listOfCoins, setListOfCoins] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
 
   useEffect(() => {
     Axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false"
     )
+    .then(setIsLoading(true)
+    )
     .then(response => {
         setListOfCoins(response.data);
+        setIsLoading(false);
        // console.log(response.data);
       })
       .catch(error => console.log(error));
@@ -47,27 +51,34 @@ function VolumePage() {
 
   return (
     <div>
-      <div className="volume-top">
-          <p>Coin</p>
-          <p className="volume-top-middle">Cap</p>
-          <p className="volume-top-right">Volume/Price</p>
+      {isLoading === true ?
+        <p className='loading-data'>Loading...</p>
+      :
+        <div>
+          <div className="volume-top">
+              <p>Coin</p>
+              <p className="volume-top-middle">Cap</p>
+              <p className="volume-top-right">Volume/Price</p>
+            </div>
+          <div className="volume-rows">
+            {reversedNewList.map((coin) => {
+              return(
+                <Volume
+                  key={coin.id}
+                  id={coin.id}
+                  icon={coin.image}
+                  symbol={coin.symbol.toUpperCase()}
+                  name={coin.name}
+                  coincap={numFormatter(coin.market_cap)}
+                  volume={numFormatter(coin.total_volume)}
+                  price={numberWithCommas(coin.current_price)}
+                  priceChange={coin.price_change_percentage_24h}
+                /> 
+              );
+            })} 
+          </div>
         </div>
-      <div className="volume-rows">
-        {reversedNewList.map((coin) => {
-          return(
-            <Volume
-              key={coin.id}
-              icon={coin.image}
-              symbol={coin.symbol.toUpperCase()}
-              name={coin.name}
-              coincap={numFormatter(coin.market_cap)}
-              volume={numFormatter(coin.total_volume)}
-              price={numberWithCommas(coin.current_price)}
-              priceChange={coin.price_change_percentage_24h}
-            /> 
-          );
-        })} 
-      </div>
+      }
     </div>
   );
 }
