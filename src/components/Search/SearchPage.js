@@ -39,7 +39,7 @@ function SearchPage() {
   return (
       <div>
           <div className='searchbar'>
-            <form className='searchbar' onSubmit='return false'>
+            <form className='searchbar'>
               <div className="magGlass">{magGlass}</div>
               <input type='text' 
                 className='text-block' 

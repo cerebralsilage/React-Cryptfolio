@@ -1,25 +1,19 @@
 import React, { createContext, useState, useEffect } from 'react';
-
 export const MyPicksContext = createContext();
 
 export const MyPicksContextProvider = props => {
-
  // console.log(localStorage.getItem('picksList'));
-  const [picksList, setPicksList] = useState([])
- //   picksList ?
-   //   JSON.parse(localStorage.getItem('picksList'))
-  //  : [])  */
+  const [picksList, setPicksList] = useState(
+      JSON.parse(localStorage.getItem('picksList'))
+    || 
+      []
+  )
+  
   //console.log(picksList)
 
-  const [star, setStar] = useState(localStorage.getItem('star'));
-  
-  useEffect(() => {
+   useEffect(() => {
     localStorage.setItem("picksList", JSON.stringify(picksList));
   }, [picksList]);
-
-  useEffect(() => {
-    localStorage.setItem('star', star)
-  }, [star]);
 
   const deleteCoin = coin => {
     if (picksList.length === 1) {
@@ -27,33 +21,28 @@ export const MyPicksContextProvider = props => {
     } else {
       setPicksList(picksList.filter(list => {
         console.log(list)
-        console.log(coin)
+        //console.log(coin)
         return list !== coin;
       }))
     }
     console.log('deleted');
     console.log(picksList)
-  } 
-
-  // read how to send keys inbetween components so they are defined
-   console.log(picksList)
+  }  
 
   const toggleCoin = (coin) => {
     if (picksList.length === 0) {
       setPicksList([...picksList, coin]);
-    //  console.log('no picklist')
-    } else if (picksList.includes(coin)) {
-      deleteCoin(coin);
     } else {
-      setPicksList([...picksList, coin]);
-      console.log('You added this coin');
+      if (picksList.indexOf(coin) === -1 ) {
+        setPicksList([...picksList, coin]);
+        console.log('added 1')
+      } else {
+        deleteCoin(coin)
+      }
     }
   } 
 
-
-  const toggleStar = (coin) => {
-    setStar((curr) => (curr === 'emptyStar' ? 'goldStar' : 'emptyStar'));
-  } 
+  console.log(picksList)
 
   return (
     <MyPicksContext.Provider value={{ picksList, toggleCoin }}>
