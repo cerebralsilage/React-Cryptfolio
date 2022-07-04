@@ -66,6 +66,7 @@
   justify-content: space-between;
   margin: 60px 10px 10px;
   font-size: .8rem;
+  color: gray;
 }
 
 .phead-mid {
@@ -104,6 +105,7 @@
 
 .mypicks .coin-name {
   width: 120px;
+  color: gray;
 }
 
 .mypicks .coin-ticker,
@@ -123,7 +125,7 @@ width: 100px;
 }
 
 .mypicks .crypto-row-middle {
-  text-align: right;
+  text-align: left;
   width: 80px;
   padding-right: 15px;
   align-self: center;
@@ -147,7 +149,7 @@ width: 100px;
 }
 
 .mypicks .coin-percent-green-div {
-  background-color: #059a05;
+  background-color: #069b06;
   color: #f7f6f6;
   height: 30px;
   width: 80px;

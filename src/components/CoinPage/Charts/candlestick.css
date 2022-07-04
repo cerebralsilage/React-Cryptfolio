@@ -1,0 +1,88 @@
+.chart {
+  width: 98%;
+  height: 200px;
+  display: flex;
+  margin: 10px auto;
+}
+
+.highcharts-container {
+  height: 50% !important;
+}
+
+select {
+  background-color: rgb(244, 243, 243);
+  fill: black;
+  font-size: .8rem !important;
+}
+
+
+#dark select {
+  background-color: rgb(49, 47, 47);
+  color: rgb(182, 178, 178);
+  border: 1px solid black;
+}
+
+.highcharts-button-box {
+  fill: rgb(233, 231, 231);
+}
+
+.highcharts-button-box:hover {
+  fill: gray !important;
+}
+
+.highcharts-button-box:active {
+  fill: rgb(70, 67, 67);
+}
+
+.candlestick-chart {
+  width: 100%;
+}
+
+.highcharts-background {
+  fill: #ffffff00
+}
+
+.highcharts-grid-line {
+  display: none;
+}
+
+#dark .highcharts-button-box {
+  fill: rgb(31, 31, 31);
+}
+
+#dark .highcharts-navigator-outline {
+  stroke: rgb(38, 35, 35);
+}
+
+#dark .highcharts-scrollbar-track,
+#dark .highcharts-axis-line {
+  fill: rgb(50, 49, 49);
+  stroke:rgb(108, 108, 108);
+}
+
+#dark .highcharts-scrollbar-button,
+#dark .highcharts-scrollbar-thumb {
+  fill: rgb(120, 120, 120);
+}
+
+#dark .highcharts-navigator-handle {
+  stroke:rgb(50, 49, 49);
+  fill:rgb(161, 159, 159);
+}
+
+#dark text {
+  fill: rgb(197, 194, 194) !important;
+}
+
+.highcharts-point-down {
+  fill: red;
+}
+
+#dark .highcharts-tooltip-box .highcharts-label-box {
+  fill: #383636;
+  fill-opacity: 0.55;
+}
+
+
+
+

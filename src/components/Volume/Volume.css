@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   margin: 30px 17px 0 11px;
+  color: gray;
 }
 
 .volume-top p {
@@ -37,6 +38,7 @@
 
 .volume .coin-name {
   width: 120px;
+  color: gray;
 }
 
 .volume .coin-ticker,
@@ -77,5 +79,5 @@ width: 100px;
 
 .volume .coin-price-green,
 .volume .coin-volume-green {
-  color: #059a05;
+  color: #069b06;
 }

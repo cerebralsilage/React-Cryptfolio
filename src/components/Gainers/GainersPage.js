@@ -5,8 +5,7 @@ import './Gainers.css';
 
 import Gainers from './Gainers';
 
-function GainersPage() {
-
+function GainersPage() { 
   const [listOfCoins, setListOfCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -21,7 +20,7 @@ function GainersPage() {
       //  console.log(response.data);
       })
       .catch(error => console.log(error));
-  }, []); 
+  }, []);
 
   const newList = listOfCoins.sort( function(a, b) {
     const aValue = Number(a['price_change_percentage_24h']);

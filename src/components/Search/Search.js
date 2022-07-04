@@ -13,8 +13,7 @@ const Search = ({
   id
 }) => {
 
-
-  const { toggleCoin } = useContext(MyPicksContext);
+  const { toggleCoin, colorStar } = useContext(MyPicksContext);  
 
   return (
     <div className="search">
@@ -30,7 +29,7 @@ const Search = ({
             </div>
             <div className="crypto-row-right"> 
               <div 
-                id="emptyStar" 
+                id={colorStar(data)} 
                 onClick={(e) => {
                   e.preventDefault()
                   toggleCoin(data)

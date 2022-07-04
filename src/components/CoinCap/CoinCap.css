@@ -61,6 +61,7 @@
   font-size: .8rem;
   width: 100%;
   padding: 10px 10px 0;
+  color: gray;
 }
 
 /*-- Coin rows --*/
@@ -87,8 +88,9 @@
   justify-content: space-between;
 }
 
-.coincapage .coin-name {
+.coincapage-coin-name {
   width: 120px;
+  color: gray;
 }
 
 .coincapage-coin-ticker {
@@ -105,6 +107,10 @@ width: 100px;
 .coincapage-coin-percent-red,
 .coincapage-coin-percent-green {
   font-size: .8rem;
+}
+
+.coincapage-coin-occu {
+  color: gray;
 }
 
 .coincapage-crypto-row-middle {
@@ -125,6 +131,6 @@ width: 100px;
 
 .coincapage-coin-percent-green,
 .coincapage-coin-price-green {
-  color: #059a05;
+  color: #069b06;
 }
 

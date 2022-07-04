@@ -154,7 +154,11 @@ const App = props => {
                 <Route path='/Volume' key='volume' element={ <VolumePage /> } />
                 <Route path='/Alerts' key='alerts' element={ <Alerts /> } />
                 <Route path='/Search' key='search' element={ <SearchPage /> } />
-                <Route path='/Token' key='token' element={ <CoinPage /> } />
+                <Route path='/CoinPage/:id' key='token' element={ <CoinPage /> } />
+                <Route path='Losers/CoinPage/:id' key='token' element={ <CoinPage /> } />
+                <Route path='CoinCap/CoinPage/:id' key='token' element={ <CoinPage /> } />
+                <Route path='Gainers/CoinPage/:id' key='token' element={ <CoinPage /> } />
+                <Route path='Volume/CoinPage/:id' key='token' element={ <CoinPage /> } />
               </Routes>
 
             </Container>

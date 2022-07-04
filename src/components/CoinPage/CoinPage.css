@@ -1,0 +1,86 @@
+.coin-page-top {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.coin-page-title {
+  font-size: .9rem;
+  font-weight: bold;
+  align-self: center;
+  padding: 0 5px;
+}
+
+.coin-page-logo {
+  width: 20px;
+}
+
+.coin-page-lower-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.cplt-right {
+  display: flex;
+  text-align:  left;
+}
+
+.cplt-r-mid {
+  margin-right: 60px;
+}
+
+.cp-rank {
+  align-self: center;
+}
+
+.cp-rank-title {
+  color: gray;
+}
+
+.cp-rank-num {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.cplt-lt-red {
+  color: #e00303;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.cplt-lt-green {
+  color: #069b06;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.cplt-lb-red {
+  color: #e00303;
+  font-weight: bold;
+}
+
+.cplt-lb-green {
+  color: #069b06;
+  font-weight: bold;
+}
+
+.cplt-rm-top,
+.cplt-rm-bot, 
+.cplt-rr-top,
+.cplt-rr-bot {
+  font-size: .7rem;
+  color: gray;
+}
+
+.cplt-rm-top-num,
+.cplt-rm-bot-num, 
+.cplt-rr-top-num,
+.cplt-rr-bot-num {
+  font-size: .9rem;
+}
+
+.cplt-rm-top-num,
+.cplt-rr-top-num {
+  margin-bottom: 5px;
+}

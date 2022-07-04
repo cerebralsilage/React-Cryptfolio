@@ -4,48 +4,51 @@ export const MyPicksContext = createContext();
 export const MyPicksContextProvider = props => {
  // console.log(localStorage.getItem('picksList'));
   const [picksList, setPicksList] = useState(
-      JSON.parse(localStorage.getItem('picksList'))
+    JSON.parse(localStorage.getItem('picksList'))
     || 
       []
   )
-  
-  //console.log(picksList)
 
    useEffect(() => {
     localStorage.setItem("picksList", JSON.stringify(picksList));
-  }, [picksList]);
+  }, [picksList]);  
 
   const deleteCoin = coin => {
     if (picksList.length === 1) {
       setPicksList([]);
     } else {
-      setPicksList(picksList.filter(list => {
-        console.log(list)
-        //console.log(coin)
-        return list !== coin;
-      }))
-    }
-    console.log('deleted');
-    console.log(picksList)
-  }  
+      let coinToDelete = picksList.find(ele => ele === coin.id)
+      setPicksList(picksList.filter(ele => {
+        return ele !== coinToDelete;
+      }))    
+    } 
+    console.log('deleted 1') 
+  }
 
   const toggleCoin = (coin) => {
     if (picksList.length === 0) {
-      setPicksList([...picksList, coin]);
+      setPicksList([...picksList, coin.id]);
+      console.log(picksList)
     } else {
-      if (picksList.indexOf(coin) === -1 ) {
-        setPicksList([...picksList, coin]);
-        console.log('added 1')
-      } else {
+      if (picksList.find(item => item === coin.id)) {
         deleteCoin(coin)
+      } else {
+        setPicksList([...picksList, coin.id])
+        console.log('added 1')
       }
     }
-  } 
+  }
 
-  console.log(picksList)
+  const colorStar = (coin) => {
+    if (picksList.find(item => item === coin.id)) {
+      return 'goldStar'
+    } else {
+      return 'emptyStar'
+    }
+  }
 
   return (
-    <MyPicksContext.Provider value={{ picksList, toggleCoin }}>
+    <MyPicksContext.Provider value={{ picksList, toggleCoin, colorStar }}>
       {props.children}
     </MyPicksContext.Provider>
   )
