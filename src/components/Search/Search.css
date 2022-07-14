@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   height: 35px;
-  width: 69%;
+  width: 90%;
   max-width: 400px;
   align-items: center;
   border-radius: 10px;
@@ -99,12 +99,12 @@
 .search .crypto-row-left {
   display: flex;
   align-self: center;
-  width: 200px;
+  width: 60%;
 }
 
 .search .crypto-row-right {
   text-align: right;
-  width: 100px;
+  width: 30%;
   align-self: center;
 }
 

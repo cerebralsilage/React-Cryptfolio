@@ -49,12 +49,12 @@ const MyPicksPage = props => {
             {isLoading === true ?
               <p className="loading-data">Loading...</p>
             :
-              <div className='picks-list'>
-                <div className='phead'>
-                  <p className='phead-left'>Coin</p>
-                  <p className='phead-mid'>Price/USD</p>
-                  <p className='phead-right'>24H Change</p>
-                </div>
+            <div className='picks-list'>
+              <div className='phead'>
+                <p className='phead-left'>Coin</p>
+                <p className='phead-mid'>Price/USD</p>
+                <p className='phead-right'>24H Change</p>
+              </div>
                 {listOfCoins.map((coin) => {
                   return (
                     <MyPicks

@@ -71,7 +71,7 @@ function VolumePage() {
                   name={coin.name}
                   coincap={numFormatter(coin.market_cap)}
                   volume={numFormatter(coin.total_volume)}
-                  price={numberWithCommas(coin.current_price)}
+                  price={numberWithCommas(coin.current_price.toFixed(3))}
                   priceChange={coin.price_change_percentage_24h}
                 /> 
               );

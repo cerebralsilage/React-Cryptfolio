@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { numberWithCommas, numberFormatter } from '../../Helpers/NumberFunctions';
+import { numberWithCommas } from '../../Helpers/NumberFunctions';
 import coinGecko from '../../Util/coingecko';
-import CoinData from './CoinData';
 import { useParams } from 'react-router-dom';
 import './CoinPage.css';
 
+import { CoinData } from './CoinData';
 
 
 function CoinPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [listOfCoins, setListOfCoins] = useState([]);
-  //const [chartOfCoins, setChartOfCoins] = useState([])
 
   const params = useParams();
 
@@ -27,10 +26,11 @@ function CoinPage() {
       setIsLoading(false);
     };
       fetchData();
-  }, []);
-console.log(listOfCoins)
+  }, [params.id]);
+//console.log(listOfCoins)
     
   return (
+    
     <div>
       {isLoading === true ? 
         <p className="loading-data">Loading...</p>
@@ -48,6 +48,7 @@ console.log(listOfCoins)
             symbol={coin.symbol}
             priceChange ={coin.price_change_percentage_24h.toFixed(2)}
             key={coin.id}
+            data={coin}
           />
         })}
       </div>

@@ -2,7 +2,7 @@
 .picks-title{
   font-size: 1.3rem;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 #dark .picks-title {
@@ -64,13 +64,13 @@
 .phead {
   display: flex;
   justify-content: space-between;
-  margin: 60px 10px 10px;
-  font-size: .8rem;
+  margin: 30px 10px 10px;
+  font-size: .7rem;
   color: gray;
 }
 
 .phead-mid {
-  margin-left: 80px;
+  margin-left: 60px;
 }
 
 .phead-right {
@@ -94,17 +94,20 @@
 
 .mypicks .coin {
   align-items: center;
-  
 }
 
 .mypicks .coin-mid {
-  width: 58%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
 }
 
+.mypicks .coin-price {
+  margin-left: 30%;
+}
+
 .mypicks .coin-name {
-  width: 120px;
+  width: 80px;
   color: gray;
 }
 
@@ -117,23 +120,23 @@
 
 .mypicks .crypto-row-left {
 align-self: center;
-width: 100px;
+width: 50%;
 }
 
 .mypicks .coin-name {
-  font-size: .8rem;
+  font-size: .7rem;
 }
 
 .mypicks .crypto-row-middle {
   text-align: left;
-  width: 80px;
+  width: 30%;
   padding-right: 15px;
   align-self: center;
 }
 
 .mypicks .crypto-row-right {
   text-align: right;
-  width: 88px;
+  width: 30%;
   align-self: center;
 }
 
@@ -141,22 +144,24 @@ width: 100px;
   background-color: #e00303;
   color: #f7f6f6;
   height: 30px;
-  width: 80px;
+  width: 75px;
   padding: 6px;
   text-align: center;
   border-radius: 10px;
-  margin-right: 0;
+  margin-right: 10px;
+  margin-left: 5px;
 }
 
 .mypicks .coin-percent-green-div {
   background-color: #069b06;
   color: #f7f6f6;
   height: 30px;
-  width: 80px;
+  width: 75px;
   padding: 6px;
   text-align: center;
   border-radius: 10px;
-  margin-right: 0;
+  margin-right: 10px;
+  margin-left: 5px;
 }
 
 /*-- star -- */
@@ -169,6 +174,53 @@ width: 100px;
 
 #dark .mypicks svg {
   color: #a4a3a3;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .mypicks .coin-mid {
+    width: 59%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .mypicks .coin-mid {
+    width: 58%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .mypicks .coin-mid {
+    width: 57%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .mypicks .coin-mid {
+    width: 55%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .mypicks .coin-mid {
+    width: 53%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .mypicks .coin-mid {
+    width: 52%;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .mypicks .coin-mid {
+    width: 51%;
+  }
+
+  .mypicks .coin-name {
+    width: auto;
+  }
 }
 
 

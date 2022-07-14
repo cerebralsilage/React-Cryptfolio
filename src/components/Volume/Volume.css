@@ -37,7 +37,7 @@
 }
 
 .volume .coin-name {
-  width: 120px;
+  width: 80px;
   color: gray;
 }
 
@@ -57,19 +57,18 @@ width: 100px;
 .volume .coin-name,
 .volume .coin-price-red,
 .volume .coin-price-green {
-  font-size: .8rem;
+  font-size: .7rem;
 }
 
 .volume .crypto-row-middle {
-  text-align: right;
-  width: 80px;
-  padding-right: 15px;
+  text-align: left;
+  width: 100px;
+  padding-right: 40px;
   align-self: center;
 }
 
 .volume .crypto-row-right {
   text-align: right;
-  width: 100px;
 }
 
 .volume .coin-price-red,
@@ -80,4 +79,14 @@ width: 100px;
 .volume .coin-price-green,
 .volume .coin-volume-green {
   color: #069b06;
+}
+
+@media only screen and (max-width: 340px) {
+  .volume .crypto-row-left {
+    width: 30%;
+  }
+
+  .volume .crypto-row-middle {
+    width: 80px;
+  }
 }

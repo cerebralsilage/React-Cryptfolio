@@ -7,7 +7,6 @@ import './App.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, } from '@fortawesome/free-solid-svg-icons';
-import { faBell } from '@fortawesome/free-regular-svg-icons';
 import { faSun } from '@fortawesome/free-regular-svg-icons';
 import { faMoon } from '@fortawesome/free-regular-svg-icons';
 import Logo from './assets/pics/cryptoicon.png';
@@ -24,7 +23,6 @@ import { MyPicksContextProvider } from './Helpers/MyPicksContext';
 
 
 const magnifyingGlass = <FontAwesomeIcon icon={ faMagnifyingGlass } />
-const bell = <FontAwesomeIcon icon={ faBell } /> 
 const moon = <FontAwesomeIcon icon={ faMoon } />
 const sun = <FontAwesomeIcon icon={ faSun } />
 
@@ -55,9 +53,6 @@ const App = props => {
                       <button className="toggle-button" onClick={toggleTheme}> 
                         {moon}
                       </button>
-                      <Link className="nav-link" id='bell' to='/Alerts'>
-                      { bell }
-                      </Link>
                       <Link className="nav-link" id='magGlass' to='/Search'>
                       { magnifyingGlass }
                       </Link>
@@ -67,9 +62,6 @@ const App = props => {
                       <button className="toggle-button" id='sun' onClick={toggleTheme}> 
                         {sun}
                       </button>
-                      <Link className="nav-link" id='bell-dark' to='/Alerts'>
-                        { bell }
-                      </Link>
                       <Link className="nav-link" id='magGlass-dark' to='/Search'>
                         { magnifyingGlass }
                       </Link>

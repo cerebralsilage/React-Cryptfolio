@@ -58,7 +58,7 @@
 .cap-head {
   display: flex;
   justify-content: space-between;
-  font-size: .8rem;
+  font-size: .7rem;
   width: 100%;
   padding: 10px 10px 0;
   color: gray;
@@ -89,7 +89,7 @@
 }
 
 .coincapage-coin-name {
-  width: 120px;
+  width: 80px;
   color: gray;
 }
 
@@ -98,15 +98,15 @@
 }
 
 .coincapage-crypto-row-left {
-align-self: center;
-width: 100px;
+  align-self: center;
+  width: 30%;
 }
 
 .coincapage-coin-name,
 .coincapage-coin-occu,
 .coincapage-coin-percent-red,
 .coincapage-coin-percent-green {
-  font-size: .8rem;
+  font-size: .7rem;
 }
 
 .coincapage-coin-occu {
@@ -115,13 +115,13 @@ width: 100px;
 
 .coincapage-crypto-row-middle {
   text-align: right;
-  width: 80px;
   padding-right: 15px;
+
 }
 
 .coincapage-crypto-row-right {
   text-align: right;
-  width: 100px;
+  width: 30%;
 }
 
 .coincapage-coin-percent-red,
@@ -132,5 +132,17 @@ width: 100px;
 .coincapage-coin-percent-green,
 .coincapage-coin-price-green {
   color: #069b06;
+}
+
+
+@media only screen and (max-width: 340px) {
+  .coincapage-crypto-row-middle {
+    padding: 0;
+  }
+
+  .coincapage-crypto-row-right {
+    width: 70px;
+  }
+  
 }
 

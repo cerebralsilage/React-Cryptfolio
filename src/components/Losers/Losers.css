@@ -2,17 +2,17 @@
 .losers-top {
   display: flex;
   justify-content: space-between;
-  margin: 30px 17px 0 11px;
+  margin: 30px 6px 0 9px;
   color: gray;
 }
 
 .losers-top p {
-  font-size: .8rem;
+  font-size: .7rem;
   width: 80px;
 }
 
 .losers-top-middle {
-  padding-left: 18px;
+  padding-left: 30px;
 }
 
 .losers-top-right {
@@ -37,7 +37,7 @@
 }
 
 .losers .coin-name {
-  width: 120px;
+  width: 80px;
   color: gray;
 }
 
@@ -46,19 +46,19 @@
 .losers .coin-percent-green,
 .losers .coin-percent-red {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: .9rem;
 }
 
 .losers .crypto-row-left {
 align-self: center;
-width: 100px;
+width: 30%;
 }
 
 .losers .coin-name,
 .losers .coin-volume,
 .losers .coin-price-red,
 .losers .coin-price-green {
-  font-size: .8rem;
+  font-size: .7rem;
 }
 
 .losers .coin-volume {
@@ -67,13 +67,15 @@ width: 100px;
 
 .losers .crypto-row-middle {
   text-align: right;
-  width: 80px;
-  padding-right: 15px;
+  width: 30%;
+  padding-right: 30px;
+  padding-left: 20px;
+  
 }
 
 .losers .crypto-row-right {
   text-align: right;
-  width: 100px;
+  width: 30%;
 }
 
 .losers .coin-percent-red,
@@ -85,4 +87,45 @@ width: 100px;
 .losers .coin-price-green {
   color: #069b06;
 }
+
+
+@media only screen and (min-width: 1000px) {
+  .losers .crypto-row-middle {
+    width: 80px;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1000px) {
+  .losers .crypto-row-middle {
+    width: 10%;
+  }
+}
+
+@media only screen and (min-width: 560px) and (max-width: 700px) {
+  .losers .crypto-row-middle {
+    width: 15%;
+  }
+}
+
+@media only screen and (min-width: 370px) and (max-width: 440px) {
+  .losers .crypto-row-middle {
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .losers .crypto-row-left {
+    width: 30%;
+  }
+
+  .losers .crypto-row-middle {
+    width: 80px;
+  }
+
+  .losers-top-middle {
+    padding-left: 20px;
+  }
+}
+
+
 

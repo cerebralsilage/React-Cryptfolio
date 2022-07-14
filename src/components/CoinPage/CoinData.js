@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext }from 'react';
+import { MyPicksContext } from '../../Helpers/MyPicksContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-import { CandleStickChart } from './Charts/CandleStickChart';
+import { HistoryChart } from '../Charts/HistoryChart';
 
+const star = <FontAwesomeIcon icon={ faStar } />
 
-const CoinData = ({ 
+export const CoinData = ({ 
     symbol,  
     atl,
     ath, 
@@ -12,14 +16,30 @@ const CoinData = ({
     rank, 
     price,
     priceChange,
-    image
+    image,
+    data
 }) => {
+
+  const { toggleCoin, colorStar } = useContext(MyPicksContext); 
 
   return (
     <div className="coin-page">
       <div className="coin-page-top">
-        <img className="coin-page-logo" src={image} alt="coin-logo" />
-        <p className="coin-page-title">{symbol.toUpperCase()}/USD</p>
+        <div className='cp-rank'>
+          <p className="cp-rank-title">Rank</p>
+          <p className="cp-rank-num">#{rank}</p>
+        </div> 
+        <div className="cp-symbol">
+          <img className="coin-page-logo" src={image} alt="coin-logo" />
+          <p className="coin-page-title">{symbol.toUpperCase()}/USD</p>
+        </div>
+        <div id={colorStar(data)} 
+                onClick={(e) => {
+                  e.preventDefault()
+                  toggleCoin(data)
+                }}>
+        {star}
+      </div>
       </div>
       <div className="coin-page-lower-top">
         <div className="cplt-left">
@@ -51,14 +71,8 @@ const CoinData = ({
         </div>
       </div>
       <div>
-        <CandleStickChart />
-      </div>
-   {/*   <div className='cp-rank'>
-        <p className="cp-rank-title">Rank</p>
-        <p className="cp-rank-num">#{rank}</p>
-        </div>  */}
+        <HistoryChart />
+      </div> 
     </div>
   )
 }
-
-export default CoinData
