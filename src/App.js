@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
@@ -30,18 +30,29 @@ const ThemeContext = createContext(null);
 
 
 const App = props => {
-  const [theme, setTheme] = useState('light');
+
+  const [theme, setTheme] = useState(
+    JSON.parse(localStorage.getItem('theme'))
+    || 
+      'light'
+  );
+
+   useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(theme));
+  }, [theme]); 
+
 
   const toggleTheme = () => {
     setTheme((curr) => (curr === 'light' ? 'dark' : 'light'));
-  }
+  };
+
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}> 
+    <ThemeContext.Provider value={{ theme, toggleTheme }} >
       <MyPicksContextProvider>
         <div className="App" id={theme}>
           <Router>
-            <Container className="p-0" fluid="true"> 
+            <Container className="p-0" fluid="true" id="container"> 
 
               <Navbar className ="navbar">
                 <Navbar.Brand className="navbar-brand"> 

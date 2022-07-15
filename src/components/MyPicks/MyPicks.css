@@ -1,4 +1,12 @@
 
+html {
+  height: 100vh !important;
+}
+
+#theme {
+  height: 100%;
+}
+
 .picks-title{
   font-size: 1.3rem;
   text-align: center;

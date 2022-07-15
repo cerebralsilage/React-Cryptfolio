@@ -37,6 +37,10 @@
   color: #fcfbfb;
 }
 
+#dark #container {
+  background-color: rgb(6, 6, 6);
+}
+
 .header-name {
   font-size: 1.3rem;
 }
