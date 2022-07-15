@@ -16,7 +16,6 @@ import GainersPage from './components/Gainers/GainersPage';
 import LosersPage from './components/Losers/LosersPage';
 import MyPicksPage from './components/MyPicks/MyPicksPage';
 import VolumePage from './components/Volume/VolumePage';
-import Alerts from './components/Alerts/Alerts';
 import SearchPage from './components/Search/SearchPage';
 import CoinPage from './components/CoinPage/CoinPage';
 import { MyPicksContextProvider } from './Helpers/MyPicksContext';
@@ -155,7 +154,6 @@ const App = props => {
                 <Route path='/Gainers' key='gainers' element={ <GainersPage /> } />
                 <Route path='/Losers' key='losers' element={ <LosersPage /> } />
                 <Route path='/Volume' key='volume' element={ <VolumePage /> } />
-                <Route path='/Alerts' key='alerts' element={ <Alerts /> } />
                 <Route path='/Search' key='search' element={ <SearchPage /> } />
                 <Route path='/CoinPage/:id' key='token' element={ <CoinPage /> } />
                 <Route path='Losers/CoinPage/:id' key='token' element={ <CoinPage /> } />

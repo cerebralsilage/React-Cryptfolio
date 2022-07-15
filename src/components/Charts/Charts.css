@@ -24,16 +24,41 @@ select {
   border: 1px solid black;
 }
 
-.highcharts-button-box {
-  fill: rgb(233, 231, 231);
+.highcharts-range-selector-buttons {
+  display: none;
 }
 
-.highcharts-button-box:hover {
-  fill: gray !important;
+.chart-button {
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
 }
 
-.highcharts-button-box:active {
-  fill: rgb(70, 67, 67);
+.btn1,
+.btn7,
+.btn30,
+.btnY,
+.btnAll {
+  width: 40px;
+}
+
+#dark .btn1,
+#dark .btn7,
+#dark .btn30,
+#dark .btnY,
+#dark .btnAll {
+  background-color: black;
+  color: rgb(182, 178, 178);
+}
+
+#dark .btn1:hover,
+#dark .btn7:hover,
+#dark .btn30:hover,
+#dark .btnY:hover,
+#dark .btnAll:hover {
+  background-color: rgb(23, 23, 23);
+  color: rgb(125, 123, 123);
 }
 
 .candlestick-chart {
@@ -46,10 +71,6 @@ select {
 
 .highcharts-grid-line {
   display: none;
-}
-
-#dark .highcharts-button-box {
-  fill: rgb(31, 31, 31);
 }
 
 #dark .highcharts-navigator-outline {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Axios from 'axios';
+import coinGecko from '../../Util/coingecko';
 import { useParams } from 'react-router-dom';
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
@@ -8,37 +8,71 @@ import './Charts.css';
 
 export const HistoryChart = () => {
   const [priceData, setPriceData] = useState([]);
+  const [timeFormat, setTimeFormat] = useState('24h')
   const [isLoading, setIsLoading] = useState(false);
+  const {day, week, month, year, all} = priceData;
 
   const params = useParams();
+
+  const formatData = (data) => {
+    return data.map((el) => {
+      return ([
+        el[0],
+        el[1],
+        el[2],
+        el[3],
+        el[4]
+      ])
+    });
+  };
 
   useEffect(() => {
     const fetchCandle = async () => {
       setIsLoading(true);
-      const response = await Axios.get(`https://api.coingecko.com/api/v3/coins/${params.id}/ohlc?vs_currency=usd&days=max`
-      );
-      setPriceData(response.data)
-    }
-    
-    fetchCandle();
-    setIsLoading(false);
-  }, [params.id]);
-  //console.log(priceData)
-  //console.log(volumeData)
-
-  const ohlc = []
-  if (priceData) {
-    for(let i = 0; i < priceData.length; i++) {
-      ohlc.push([
-        priceData[i][0], // the date
-        priceData[i][1], // open
-        priceData[i][2], // high
-        priceData[i][3], // low
-        priceData[i][4] // close
+      const [day, week, month, year, all] = await Promise.all([
+        coinGecko.get(`/coins/${params.id}/ohlc?vs_currency=usd&days=1`
+        ),
+        coinGecko.get(`/coins/${params.id}/ohlc?vs_currency=usd&days=7`
+        ),
+        coinGecko.get(`/coins/${params.id}/ohlc?vs_currency=usd&days=30`
+        ),
+        coinGecko.get(`/coins/${params.id}/ohlc?vs_currency=usd&days=365`
+        ),
+        coinGecko.get(`/coins/${params.id}/ohlc?vs_currency=usd&days=max`
+        ),
       ]);
+
+      setPriceData({
+        day: formatData(day.data),
+        week: formatData(week.data),
+        month: formatData(month.data),
+        year: formatData(year.data),
+        all: formatData(all.data)
+      });
+      setIsLoading(false);
+    };
+    fetchCandle();
+  }, []);
+ // console.log(day)
+
+
+  const determineTimeFormat = () => {
+    switch (timeFormat) {
+      case "24h":
+        return day;
+      case "7d":
+        return week;
+      case "1m":
+        return month;
+      case "1y":
+        return year;
+      case "all":
+        return all;
+      default:
+        return day;
     }
-  }
-// console.log(ohlc)
+  };
+
   
 // chart data and options
   const groupingUnits = [
@@ -60,6 +94,7 @@ export const HistoryChart = () => {
           backgroundColor: '#ffffff00',
       }, 
     },
+
     yAxis: [
       {
         labels: {
@@ -91,8 +126,8 @@ export const HistoryChart = () => {
     series: [
       {
         type: "candlestick",
-        name: "AAPL Up",
-        data: priceData,
+        name: "OHLC",
+        data: determineTimeFormat(),
         dataGrouping: {
           units: groupingUnits
         }
@@ -106,6 +141,38 @@ export const HistoryChart = () => {
           <p className='loading-data'>Loading...</p>
         :
           <div>
+            <div className="chart-button">
+              <button
+                onClick={() => setTimeFormat("24h")}
+                className="btn1"
+              >
+                1d
+              </button>
+              <button
+                onClick={() => setTimeFormat("7d")}
+                className="btn7"
+              >
+                7d
+              </button>
+              <button
+                onClick={() => setTimeFormat("1m")}
+                className="btn30"
+              >
+                1m
+              </button>
+              <button
+                onClick={() => setTimeFormat("1y")}
+                className="btnY"
+              >
+                1y
+              </button>
+              <button
+                onClick={() => setTimeFormat("all")}
+                className="btnAll"
+              >
+                all
+              </button>
+            </div>
             <HighchartsReact
               highcharts={Highcharts}
               constructorType={"stockChart"}
